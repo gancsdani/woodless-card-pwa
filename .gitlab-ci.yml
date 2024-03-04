@@ -1,0 +1,11 @@
+stages:
+  - release
+
+release:
+  stage: release
+  script:
+    - apt-get update -y && apt-get install -y lftp
+    - lftp -e "open -u $FTP_USERNAME,$FTP_PASSWORD ftp://example.com/path/to/directory; rm -rf *; exit"
+    - ncftpput -R -v -u $FTP_USERNAME -p $FTP_PASSWORD example.com /path/to/destination/ local_folder/
+  only:
+    - main
