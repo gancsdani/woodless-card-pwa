@@ -5,7 +5,7 @@ release:
   stage: release
   script:
     - apt-get update -y && apt-get install -y lftp
-    - lftp -e "open -u $FTP_USERNAME,$FTP_PASSWORD ftp://example.com/path/to/directory; rm -rf *; exit"
-    - ncftpput -R -v -u $FTP_USERNAME -p $FTP_PASSWORD example.com /path/to/destination/ local_folder/
+    - lftp -e "open -u $FTP_USERNAME,$FTP_PASSWORD ftp://harmadikvilaghaboru.hu/public_html/gancsdaniel/i/; rm -rf *; exit"
+    - ncftpput -R -v -u $FTP_USERNAME -p $FTP_PASSWORD harmadikvilaghaboru.hu public_html/gancsdaniel/i /
   only:
     - main
