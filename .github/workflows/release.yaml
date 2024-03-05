@@ -16,9 +16,14 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20
+
     - name: Clear FTP directory
       run: |
-        lftp -e 'set ssl:verify-certificate no; 'open -u $FTP_USERNAME,$FTP_PASSWORD ftp://harmadikvilaghaboru.hu/public_html/gancsdaniel/directory; rm -rf *; exit'
+        lftp -e 'set ssl:verify-certificate no; open -u $FTP_USERNAME,$FTP_PASSWORD ftp://harmadikvilaghaboru.hu/public_html/gancsdaniel/directory; rm -rf *; exit'
 
     - name: Copy files to FTP server
       run: |
