@@ -18,7 +18,7 @@ jobs:
 
     - name: Clear FTP directory
       run: |
-        lftp -e 'open -u $FTP_USERNAME,$FTP_PASSWORD ftp://harmadikvilaghaboru.hu/public_html/gancsdaniel/directory; rm -rf *; exit'
+        lftp -e 'set ssl:verify-certificate no; 'open -u $FTP_USERNAME,$FTP_PASSWORD ftp://harmadikvilaghaboru.hu/public_html/gancsdaniel/directory; rm -rf *; exit'
 
     - name: Copy files to FTP server
       run: |
