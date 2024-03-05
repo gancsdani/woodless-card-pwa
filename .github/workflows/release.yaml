@@ -1,0 +1,26 @@
+name: Release on Push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Clear FTP directory
+      run: |
+        lftp -e 'open -u $FTP_USERNAME,$FTP_PASSWORD ftp://harmadikvilaghaboru.hu.hu/public_html/gancsdaniel/directory; rm -rf *; exit'
+
+    - name: Copy files to FTP server
+      run: |
+        ncftpput -R -v -u $FTP_USERNAME -p $FTP_PASSWORD example.com /public_html/gancsdaniel/directory /
+
+      env:
+        FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
