@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'Kalista';
+    src:    url('assets/fonts/Kalista.otf') format('opentype'),
+            url('assets/fonts/Kalista.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Kalista Alt';
+        src:    url('assets/fonts/Kalista Alt.otf') format('opentype'),
+                url('assets/fonts/Kalista Alt.ttf') format('truetype');
+}
+
+body {
+    text-align: center;
+    font-family: 'Kalista', sans-serif; /* Use Kalista as the primary font */
+    /* overflow: hidden; */
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    font-weight: 100;
+    font-size: 48px;
+    font-weight: 100;
+    margin-bottom: 80px
+}
+
+h2 {
+    font-weight: 100;
+    font-size: 42px;
+    font-weight: 100;
+}
+
+img.image {
+    padding: 0 40px;
+    width: 100%;
+    max-width: 420px;
+    max-height: 100%;
+    box-sizing: border-box;
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+
+    -o-box-pack: center;
+    justify-content: center;
+    -o-box-align: center;
+    align-items: center;
+}
+
+.card.flipped img.image {
+    opacity: 0;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card.back {
+    transform: rotateY(180deg);
+}
+
+body .card img.dance {
+    display: none;
+    position: fixed;
+    transform: translateY(-80%);
+    width: 100%;
+    max-width: 420px;
+    bottom: 0;
+}
+
+body img.date {
+    display: none;
+    position: fixed;
+    bottom: 40px;
+    width: 365px;
+    max-width: 150px;
+}
+
+/* .splash-screen {
+    position: fixed;
+    top: -400;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 800px);
+    background-color: black;
+    z-index: 9999;
+    animation: fadeOut 600ms forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+} */

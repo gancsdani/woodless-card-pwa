@@ -21,13 +21,9 @@ jobs:
       with:
         node-version: 20
 
-    - name: Clear FTP directory
+    - name: Update the FTP Directory
       run: |
-        lftp -e 'set ssl:verify-certificate no; open -u $FTP_USERNAME,$FTP_PASSWORD ftp://harmadikvilaghaboru.hu/public_html/gancsdaniel/directory; rm -rf *; exit'
-
-    - name: Copy files to FTP server
-      run: |
-        ncftpput -R -v -u $FTP_USERNAME -p $FTP_PASSWORD example.com /public_html/gancsdaniel/directory /
+        ncftpput -R -v -u ${{ secrets.FTP_USERNAME }} -p ${{ secrets.FTP_PASSWORD }} lslqlb.loginssl.com / lilla\&dani
 
       env:
         FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
