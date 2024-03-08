@@ -1,23 +1,47 @@
+@font-face {
+    font-family: 'Kalista';
+    src:    url('assets/fonts/Kalista.otf') format('opentype'),
+            url('assets/fonts/Kalista.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Kalista Alt';
+        src:    url('assets/fonts/Kalista Alt.otf') format('opentype'),
+                url('assets/fonts/Kalista Alt.ttf') format('truetype');
+}
+
 body {
     text-align: center;
+    font-family: 'Kalista', sans-serif; /* Use Kalista as the primary font */
     /* overflow: hidden; */
     background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
     margin: 0;
 }
 
+h1 {
+    font-weight: 100;
+    font-size: 48px;
+    font-weight: 100;
+    margin-bottom: 80px
+}
+
+h2 {
+    font-weight: 100;
+    font-size: 42px;
+    font-weight: 100;
+}
+
 img.image {
-    margin: auto;
-    left: 0;
-    right: 0;
+    padding: 0 40px;
     width: 100%;
     max-width: 420px;
     max-height: 100%;
-    display: block;
-    transform: translateY(50px);
+    box-sizing: border-box;
 
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -57,3 +81,4 @@ body img.date {
     width: 365px;
     max-width: 150px;
 }
+

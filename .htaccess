@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# HTTP-ről HTTPS-re irányítás
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Gyökérmappából a lilla&dani mappába irányítás
+RewriteCond %{HTTP_HOST} ^famentesmeghivo\.hu$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.famentesmeghivo\.hu$
+RewriteRule ^/?$ https://www.famentesmeghivo.hu/lilla\&dani [R=301,L]

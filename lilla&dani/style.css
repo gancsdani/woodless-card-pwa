@@ -82,23 +82,3 @@ body img.date {
     max-width: 150px;
 }
 
-/* .splash-screen {
-    position: fixed;
-    top: -400;
-    left: 0;
-    width: 100%;
-    height: calc(100% + 800px);
-    background-color: black;
-    z-index: 9999;
-    animation: fadeOut 600ms forwards;
-}
-
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        visibility: hidden;
-    }
-} */
